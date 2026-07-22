@@ -1,6 +1,6 @@
 # Root Cause Analysis
 
-## 1. Key driver(s) of the revenue drop
+## 1. Key drivers of the revenue drop
 
 The claims data suggests that Yupa Insurance’s revenue drop is primarily driven by **higher claim payouts**, not by a fall in premiums or number of insured customers.
 
