@@ -36,8 +36,15 @@ The financial model is based on the following actuarial and operational assumpti
 For each projected year $n$, the following calculations are performed:
 
 ### 1. Student Enrollment
+
 Student enrollment increases annually by 20%:
+
 $$\text{Students}_n = \text{Students}_{n-1} \times (1 + \text{Growth Rate})$$
+
+**Where:**
+* $\text{Students}_n$: Enrolled students in the current year
+* $\text{Students}_{n-1}$: Enrolled students in the previous year
+* $\text{Growth Rate}$: Annual growth percentage ($0.20$ or $20\%$)
 
 ### 2. Premium Revenue
 $$\text{Revenue} = \text{Number of Students} \times \text{Premium per Student}$$
