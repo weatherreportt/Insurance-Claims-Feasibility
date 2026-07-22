@@ -1,6 +1,6 @@
-# Yupa Insurance — Revenue Diagnostics & Student Insurance Feasibility
+# Revenue Diagnostics & Student Insurance Feasibility
 
-**Technical Documentation**
+### **Technical Documentation**
 
 ---
 
