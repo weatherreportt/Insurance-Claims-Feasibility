@@ -1,4 +1,4 @@
-# Yupa Insurance — Revenue Diagnostics & Student Insurance Feasibility
+Revenue Diagnostics & Student Insurance Feasibility
 
 A case-competition data analysis project for **Yupa Insurance**, a healthcare insurer in India, covering two independent workstreams built on a shared claims dataset:
 
