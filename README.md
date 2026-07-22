@@ -1,110 +1,393 @@
-# Insurance-Claims-Feasibility
-
+# Insurance Analytics: Root Cause Diagnosis, Fraud & Risk Analysis, and Student Insurance Financial Feasibility
 
 ## Overview
-This project presents a three-year financial projection and sustainability analysis for a proposed **Student Health Insurance Scheme**. The objective is to evaluate whether the insurance model can remain financially viable under projected enrollment growth, expected healthcare utilization, and claim costs.
 
-The analysis estimates annual premium revenue, claims expenditure, administrative expenses, profit/loss, return on investment (ROI), and loss ratio. Visualizations are included to illustrate financial trends over the projection period.
+This project was developed as part of the ** Case Competition**, where the objective was to investigate the decline in **Yupa Insurance's** revenue despite stable policy pricing and insured lives, and to evaluate the financial feasibility of launching a subsidized student health insurance scheme in Delhi.
 
-## Objectives
-The primary objectives of this project are:
-* **Forecast** the financial performance of a student health insurance program over three years.
-* **Estimate** annual premium revenue based on projected student enrollment.
-* **Calculate** expected healthcare claims using claim frequency and average claim cost.
-* **Evaluate** the financial sustainability of the insurance model.
-* **Visualize** revenue, claims, profit, ROI, and loss ratio using informative graphs.
-* **Identify** key financial risks and provide recommendations for improving sustainability.
+The project combines **Exploratory Data Analysis (EDA), Root Cause Analysis (RCA), Fraud Detection, Risk Analysis, Insurance Analytics, and Financial Modeling** to generate actionable business recommendations.
 
+---
 
-## Project Assumptions
+# Problem Statement
 
-The financial model is based on the following actuarial and operational assumptions:
+Yupa Insurance experienced a significant decline in revenue over two consecutive quarters, while competing insurers remained unaffected. Since premium pricing and the number of insured members remained constant, management suspected that operational inefficiencies, billing irregularities, or contractual loopholes were responsible.
 
-| Parameter | Value | Details |
-| :--- | ---: | :--- |
-| **Initial Student Enrollment** | 2,000 students | Pilot baseline |
-| **Annual Enrollment Growth** | 20% | Expected expansion rate |
-| **Annual Premium per Student** | ₹7,000 | Assigned premium amount |
-| **Expected Claim Rate** | 10% | Proportion of students filing claims |
-| **Average Claim Amount** | ₹92,989.13 | Calculated from EDA dataset |
-| **Administrative Expenses** | 15% | Percentage of total premium revenue |
-| **Projection Period** | 3 Years | 2027 – 2029 |
+The consulting objectives were:
 
+1. Diagnose the root cause of the revenue decline.
+2. Identify fraudulent or abnormal claim patterns.
+3. Assess insurance risk.
+4. Recommend mitigation strategies.
+5. Evaluate the financial viability of entering the student insurance market in Delhi through a three-year financial projection.
 
-## Financial Model & Mathematical Formulations
+---
 
-For each projected year $n$, the following calculations are performed:
+# Business Objectives
 
-### 1. Student Enrollment
+## Part I – Root Cause Analysis
 
-Student enrollment increases annually by 20%:
+- Analyze historical claims data.
+- Identify the primary drivers behind declining profitability.
+- Detect abnormal hospital billing behavior.
+- Investigate repeated claim patterns.
+- Examine contractual loopholes being exploited.
+- Recommend operational and policy changes.
 
-$$\text{Students}_n = \text{Students}_{n-1} \times (1 + \text{Growth Rate})$$
+---
 
-**Where:**
-* $\text{Students}_n$: Enrolled students in the current year
-* $\text{Students}_{n-1}$: Enrolled students in the previous year
-* $\text{Growth Rate}$: Annual growth percentage ($0.20$ or $20\%$)
+## Part II – Student Insurance Feasibility
 
-### 2. Premium Revenue
-$$\text{Revenue} = \text{Number of Students} \times \text{Premium per Student}$$
+Evaluate whether a subsidized student insurance scheme would be financially sustainable under the following assumptions:
 
-### 3. Expected Claimants
-The expected number of students making insurance claims:
-$$\text{Expected Claimants} = \text{Students} \times \text{Claim Rate}$$
+- Annual Premium: **₹7,000 per student**
+- Government Subsidy: **50%**
+- University Contribution: **25%**
+- Student Contribution: **25%**
+- Initial Enrollment: **2,000 students**
+- Annual Growth Rate: **20%**
+- Claim Frequency: **10%**
+- Average Claim Amount: **₹92,989.13**
 
-### 4. Claims Cost
-Total annual claims expenditure:
-$$\text{Claims Cost} = \text{Expected Claimants} \times \text{Average Claim Amount}$$
+---
 
-### 5. Administrative Expenses
-Administrative overhead is assumed to be 15% of total revenue:
-$$\text{Administrative Cost} = \text{Revenue} \times 15\%$$
+# Dataset
 
-### 6. Profit / Loss
-$$\text{Profit} = \text{Revenue} - \text{Claims Cost} - \text{Administrative Cost}$$
+The insurance claims dataset contains:
 
-### 7. Return on Investment (ROI)
-$$\text{ROI} = \left( \frac{\text{Profit}}{\text{Claims Cost} + \text{Administrative Cost}} \right) \times 100$$
+- Claim ID
+- Hospital Name
+- Patient ID
+- Medical Procedure
+- Claim Amount
+- Claim Date
+- Claim Status
 
-### 8. Loss Ratio
-$$\text{Loss Ratio} = \left( \frac{\text{Claims Cost}}{\text{Premium Revenue}} \right) \times 100$$
+---
 
-> **Loss Ratio Interpretation:**
-> * **$< 100\%$** $\rightarrow$ Financially healthy / profitable.
-> * **$= 100\%$** $\rightarrow$ Break-even (claims equal premium).
-> * **$> 100\%$** $\rightarrow$ Underwriting loss (claims exceed premium revenue).
+# Project Workflow
 
+```
+Data Collection
+        │
+        ▼
+Data Cleaning
+        │
+        ▼
+Exploratory Data Analysis
+        │
+        ▼
+Fraud & Risk Analysis
+        │
+        ▼
+Root Cause Analysis
+        │
+        ▼
+Financial Projection
+        │
+        ▼
+Business Recommendations
+```
 
-## Projection Results
+---
 
-### Financial Performance Overview
+# Exploratory Data Analysis (EDA)
 
-| Metric | Year 2027 | Year 2028 | Year 2029 |
-| :--- | ---: | ---: | ---: |
-| **Enrolled Students** | 2,000 | 2,400 | 2,880 |
-| **Total Revenue (₹)** | ₹14,000,000.00 | ₹16,800,000.00 | ₹20,160,000.00 |
-| **Claims Cost (₹)** | ₹18,597,826.00 | ₹22,317,391.20 | ₹26,780,869.44 |
-| **Admin Cost (15%) (₹)** | ₹2,100,000.00 | ₹2,520,000.00 | ₹3,024,000.00 |
-| **Net Profit / Loss (₹)** | **-₹6,697,826.00** | **-₹8,037,391.20** | **-₹9,644,869.44** |
-| **ROI (%)** | **-32.37%** | **-32.37%** | **-32.37%** |
-| **Loss Ratio (%)** | **132.84%** | **132.84%** | **132.84%** |
+EDA was performed to understand the characteristics of the insurance claims and identify unusual patterns affecting profitability.
 
+## Data Cleaning
 
-## Visualizations
+- Removed formatting inconsistencies
+- Converted claim amounts into numeric values
+- Checked missing values
+- Checked duplicate claims
+- Validated data types
 
-The project generates several publication-grade charts located in the `graphs/` directory:
+---
 
-* `revenue_growth.png` – Multi-year student enrollment and revenue expansion.
-* `claims_cost.png` – Claims expenditure vs. total revenue collected.
-* `revenue_vs_profit.png` – Visualizing the growing deficit between revenue and losses.
-* `financial_projection.png` – Comprehensive multi-panel financial dashboard.
-* `loss_ratio.png` – Loss ratio trajectory benchmarked against the 100% break-even line.
+## Descriptive Statistics
 
+Generated summary statistics including:
 
-## Technologies Used
+- Mean claim amount
+- Median claim amount
+- Standard deviation
+- Maximum claim value
+- Minimum claim value
+- Claim distribution
 
-* **Python 3**
-* **Pandas** – Data manipulation & financial calculations
-* **NumPy** – Numerical operations
-* **Matplotlib / Seaborn** – Data visualization & chart formatting
+---
+
+## Hospital Billing Analysis
+
+Hospital-wise analysis included:
+
+- Number of claims
+- Total billed amount
+- Average claim amount
+- Revenue concentration
+
+The analysis revealed that **CityCare Hospital accounted for the highest cumulative claim amount**, indicating that a significant portion of payouts was concentrated within a single provider.
+
+---
+
+## Procedure Analysis
+
+Studied:
+
+- Most frequently claimed procedures
+- Average cost by procedure
+- Procedure-wise expenditure
+
+This helps identify expensive treatments contributing disproportionately to claim costs.
+
+---
+
+## Patient Claim Analysis
+
+Examined:
+
+- Claims per patient
+- Repeat hospital visits
+- Multiple claims within short intervals
+
+The analysis showed repeated claims associated with the same patient at the same hospital, suggesting potential overutilization or abuse of the reimbursement process.
+
+---
+
+# Root Cause Analysis (RCA)
+
+## Problem
+
+Despite stable premiums and policyholders, Yupa Insurance experienced declining revenue.
+
+Since premium income remained constant, the decline had to originate from **higher claims expenditure** rather than reduced sales.
+
+---
+
+## Key Findings
+
+The claims data revealed several anomalies:
+
+### 1. Repeated Claims for the Same Patient
+
+One patient (e.g., **P123**) submitted multiple high-value claims within a very short period, all from the same hospital.
+
+This pattern indicates either:
+
+- duplicate billing,
+- claim splitting,
+- repeated reimbursement for the same episode of care.
+
+---
+
+### 2. Hospital Billing Concentration
+
+A disproportionate share of total claims originated from **CityCare Hospital**, making it a significant driver of claims expenditure.
+
+Heavy dependence on a single provider increases financial exposure and reduces cost control.
+
+---
+
+### 3. High-Cost Procedures
+
+Certain procedures (such as **Knee Surgery**) accounted for a large proportion of total claims, increasing the insurer's payout obligations.
+
+---
+
+### 4. Possible Contractual Loophole
+
+The observed claim patterns suggest that hospitals may be exploiting weaknesses in reimbursement policies by:
+
+- splitting one hospitalization into multiple claims,
+- submitting repeated claims within short intervals,
+- maximizing reimbursement without triggering automatic fraud detection.
+
+Although these patterns are indicative of abuse, they should be treated as **potential fraud indicators requiring further investigation**, rather than confirmed fraud.
+
+---
+
+# Fraud Detection & Risk Analysis
+
+Fraud analysis focused on identifying statistical anomalies rather than proving fraudulent intent.
+
+## Indicators Evaluated
+
+- Duplicate claims
+- Repeated patient admissions
+- High-value outlier claims
+- Hospital billing concentration
+- Multiple claims within short periods
+- Procedure-specific cost anomalies
+
+Methods used:
+
+- Frequency analysis
+- Outlier detection
+- Hospital-wise aggregation
+- Patient-wise aggregation
+- Cost distribution analysis
+
+---
+
+# Business Risk Assessment
+
+Major financial risks identified include:
+
+- Excessive dependence on a few hospitals
+- Weak claim verification process
+- High-cost procedures driving payouts
+- Lack of repeat-claim monitoring
+- Limited fraud screening before settlement
+
+---
+
+# Recommended Mitigation Strategies
+
+To reduce revenue leakage, Yupa Insurance should implement the following controls:
+
+### Strengthen Contract Terms
+
+- Limit reimbursement for repeated procedures.
+- Introduce claim caps for selected treatments.
+- Define minimum intervals between similar claims.
+
+---
+
+### Automated Fraud Detection
+
+Implement machine learning or rule-based systems to flag:
+
+- duplicate claims,
+- repeated admissions,
+- abnormal billing patterns,
+- unusual provider behavior.
+
+---
+
+### Provider Audits
+
+Conduct regular audits for hospitals exhibiting:
+
+- unusually high claim volumes,
+- excessive billing,
+- abnormal reimbursement patterns.
+
+---
+
+### Pre-Authorization
+
+Require pre-authorization for expensive procedures to verify medical necessity before claim approval.
+
+---
+
+### Continuous Risk Monitoring
+
+Develop dashboards that continuously monitor:
+
+- provider performance,
+- patient claim history,
+- abnormal billing behavior,
+- claim trends.
+
+---
+
+# Student Insurance Financial Projection
+
+A financial model was developed for a three-year pilot program.
+
+## Assumptions
+
+| Parameter | Value |
+|------------|-------|
+| Initial Students | 2,000 |
+| Annual Growth | 20% |
+| Premium | ₹7,000 |
+| Claim Frequency | 10% |
+| Average Claim Amount | ₹92,989.13 |
+
+---
+
+# Key Performance Indicators (KPIs)
+
+The following insurance KPIs were calculated to evaluate the financial performance of the proposed student insurance scheme:
+
+| KPI | Description |
+|------|-------------|
+| Total Premium Revenue | Annual premium income generated from enrolled students |
+| Expected Claimants | Estimated number of students expected to file claims |
+| Claims Cost | Total projected healthcare payout |
+| Administrative Cost | Operational cost of managing the insurance program |
+| Net Profit/Loss | Revenue after deducting claims and administrative expenses |
+| Return on Investment (ROI) | Profit generated relative to total costs |
+| Loss Ratio | Claims Cost ÷ Premium Revenue × 100 |
+| Revenue Growth | Annual increase in premium revenue due to student enrollment growth |
+
+---
+
+# Financial Results
+
+The three-year projection indicates:
+
+- Premium revenue increases each year due to enrollment growth.
+- Claims expenditure also increases proportionally.
+- The projected **Loss Ratio remains 132.84%**.
+- ROI remains negative throughout the projection period.
+- Net losses increase annually.
+
+These findings indicate that the proposed premium structure is insufficient to sustain the insurance scheme.
+
+---
+
+# Visualizations
+
+The project includes:
+
+- Hospital-wise claim distribution
+- Procedure frequency
+- Patient claim frequency
+- High-value claim analysis
+- Fraud indicator charts
+- Revenue projection
+- Claims cost projection
+- Revenue vs Profit
+- ROI trend
+- Loss Ratio trend
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+---
+
+# Skills Demonstrated
+
+- Exploratory Data Analysis (EDA)
+- Root Cause Analysis (RCA)
+- Healthcare Analytics
+- Insurance Analytics
+- Fraud Detection
+- Risk Assessment
+- Business Intelligence
+- Financial Forecasting
+- KPI Development
+- ROI Analysis
+- Loss Ratio Analysis
+- Data Visualization
+- Strategic Business Recommendations
+
+---
+
+# Conclusion
+
+The analysis indicates that Yupa Insurance's revenue decline is primarily driven by **increasing claims costs rather than reduced premium income**. Repeated high-value claims, concentration of claims from specific hospitals, and potential weaknesses in reimbursement policies suggest that contractual loopholes and insufficient claim monitoring may be contributing to revenue leakage.
+
+Additionally, the financial feasibility assessment of the proposed student insurance scheme shows that, under the current assumptions, the program would generate a **Loss Ratio of 132.84%**, meaning claims exceed premium revenue before operational expenses are considered. Consequently, the scheme is not financially sustainable in its current form.
+
+To improve profitability, Yupa Insurance should strengthen provider contracts, enhance fraud detection mechanisms, implement stricter claim verification processes, adopt risk-based pricing strategies, and introduce preventive healthcare initiatives to reduce long-term claim costs.
